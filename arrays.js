@@ -1,44 +1,3 @@
-/ Interview Quetions
-var result1=0.1+0.2;
-console.log(result1);
-// 0.30000000000000004
-
-// when working with floating point numbers in javascript , consider using methods like toFixed() when precise  deciaml representation is nessecary
-
-// Interview Quetion 2
-console.log(str+40);
-hello40
-
-// Interview Quetion 3
-what is difrence between == and === equal toFixed
-nterview-Level Definition
-
-== (Loose Equality Operator):
-The == operator compares two values after performing type coercion, if necessary.
-
-=== (Strict Equality Operator):
-The === operator compares both the value and the data type of two operands without performing type coercion.
-
-Example
-5 == "5"   // true
-
-Here, JavaScript converts "5" from a string to a number before comparison.
-
-5 === "5"  // false
-
-Here, the values are similar, but their data types are different (number and string), so the result is false.
-
-Best practice
-
-In most cases, prefer === because it avoids unexpected type conversion and produces more predictable results.
-
-// Important quetions
-// console.log("5"-3);
-
-// console.log(2<10<7);
-
-// console.log("20"+10+10);
-
 // filter methos
 // find and findIndex
 
@@ -134,3 +93,12 @@ let WithMr=names.map((currVAl)=>{
     return prefix+" "+currVAl;
 })
 console.log(WithMr);
+
+
+// reduce method
+let productts=[1,2,34,45,5,6];
+let totalPrice=productts.reduce((accumalator,currVAl)=>{
+    return accumalator+currVAl;
+    
+},0);
+console.log(totalPrice);
