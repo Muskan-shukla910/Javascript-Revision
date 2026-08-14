@@ -1,4 +1,4 @@
-/ filter methos
+// / filter methos
 // find and findIndex
 
 const products=[
