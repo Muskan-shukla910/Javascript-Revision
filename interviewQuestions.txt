@@ -134,3 +134,61 @@ let WithMr=names.map((currVAl)=>{
     return prefix+" "+currVAl;
 })
 console.log(WithMr);
+
+
+
+// Interview Quetions
+function printA_To_Z(){
+    for(let char=97;char<=122;char++){
+        // let ch=charAt(i);
+        console.log(String.fromCharCode(char));
+        }
+}
+
+printA_To_Z();
+
+
+// count the number of vowels
+
+let MyStr="muskan shukla";
+let count=0;
+
+for (const vowel of MyStr) {
+    if(vowel=='a' || vowel=='i' || vowel=='e' || vowel=='o' || vowel=='u'){
+        count++;
+    }
+}
+console.log(count);
+
+// write a function to check if all the vowel presents in a string or not ?
+let str="Shukla"
+function checkVowel(){
+    for (const ele of str) {
+        if(ele=='a' ||ele=='e' ||ele=='i' ||ele=='e' ||ele=='u'){
+        console.log("yes vowels are presnt in this string");
+        break;
+    }
+    // else{
+        // console.log("Vowels are not presnet");   }
+        
+    }
+    
+}
+checkVowel();
+
+
+// another method
+const checkAllVowelPresentOrNOt=((str)=>{
+    const vowels="aeiou";
+    for(let char of vowels){
+        // let yes=str.includes(char);
+        // console.log(yes);
+        if(!str.includes(char)){
+            return false;
+        }
+        return true;
+        
+    }
+
+});
+console.log(checkAllVowelPresentOrNOt("Muskan shukla , is here"));
