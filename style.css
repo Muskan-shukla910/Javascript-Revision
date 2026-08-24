@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+:root{
+    --bg-color:#000000;
+    --primary-color:#f4f4f4;
+}
+body{
+    background-color:var(--bg-color);
+}

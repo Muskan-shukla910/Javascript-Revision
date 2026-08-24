@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            /* background: ; */
+            background-image: linear-gradient(to right, rgb(237, 106, 106), rgb(0, 255, 38));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        section {
+            height: 200px;
+            width: 255px;
+            /* background-color: rgb(40, 229, 229); */
+            background-color: transparent;
+            margin: 130px auto;
+            border-radius: 10px;
+            /* box-shadow: 5px 5px 10px gray; */
+            padding: 10px;
+        }
+
+        #myButton1 {
+            height: 25px;
+            width: 90px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: transparent;
+            background-color: rgb(142, 230, 54);
+            margin: 10px;
+            cursor: pointer;
+
+        }
+        #myButton2 {
+            height: 25px;
+            width: 90px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: transparent;
+            background-color: #e62020;
+            margin: 10px;
+            /* box-sizing: border-box; */
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 13px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        h2:hover {}
+
+        #copyCode {
+            height: 80px;
+            width: 255px;
+            background-color: transparent;
+            color: #ffff;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <button id="myButton1">#051937</button>
+            <button id="myButton2">#051937</button>
+        </div>
+
+        <h2>Click to copy your code from here</h2>
+        <div id="copyCode">
+            background-image:linear-gradient(to right,rgb(92,145,229),rgb(152,63,198));
+        </div>
+    </section>
+    <script>
+
+        let btn1 = document.getElementById("myButton1");
+        let btn2 = document.getElementById("myButton2");
+        let copyCode = document.getElementById("copyCode");
+        // by defalt reg and reg2 set kr diya
+        let reg='#fff';
+        let reg2='#000';
+        const gethexValue = () => {
+            let myHexa = '0123456789abcdef';
+            // console.log(myHexa[5]);
+            // generate radom number 0 to 6
+            let colors = '#';
+
+            for (let i = 0; i < 6; i++) {
+                let generate = Math.floor(Math.random() * 16);
+                // console.log(myHexa[5]);
+                colors = colors + myHexa[generate];
+            }
+            // console.log(colors);
+            return colors;
+        }
+        // hume 6 digit chahiyhe but bo 1234567890abcd esme se hone chahiye 
+        
+        const handleButton1 = () => {
+             rgb = gethexValue();
+            console.log(rgb);
+            // document.body.style.backgroundImage=rgb;
+            document.body.style.backgroundImage = `linear-gradient(to right,${rgb},${rgb2})`;
+            copyCode.innerHTML = ` background-image:linear-gradient(to right,${rgb},${rgb2})`;
+
+        btn1.style.backgroundColor=`${rgb}`;
+
+        }
+        const handleButton2 = () => {
+            rgb2 = gethexValue();
+            console.log(rgb2);
+            document.body.style.backgroundImage = `linear-gradient(to right,${rgb},${rgb2})`;
+            // copyCode.innerHTML=`linear-gradient(to right,${rgb2},#444)`;
+            copyCode.innerHTML = ` background-image:linear-gradient(to right,${rgb},${rgb2})`;
+
+
+            // button ka bhi backgrund color change kro
+            btn2.style.backgroundColor=`${rgb2}`;
+
+        }
+
+        // buttons ka bhi text change kro
+        
+        copyCode.addEventListener(('click'),()=>{
+            navigator.clipboard.writeText(copyCode.innerText);
+        })
+        btn1.addEventListener(("click"), handleButton1);
+        btn2.addEventListener(("click"), handleButton2);
+    </script>
+</body>
+
+</html>
