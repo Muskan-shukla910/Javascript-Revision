@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>To Do List</h1>
+    <form>
+        <div>
+            <input type="text" id="inputVal">
+            <button class="btn">Add Todo</button>
+        </div>
+        <section class="todo-lists-elem"></section>
+    </form>
+
+    <script>
+        // step 1
+        // select the DOM elements that you need
+        let inputVal=document.querySelector("#inputVal");
+        let todoListsElem=document.querySelector(".todo-lists-elem");
+        let btn=document.querySelector(".btn");
+
+        
+        // step 5 (get Todo from Local Storage)
+        const getTodoListFromLocal=()=>{
+           return JSON.parse(localStorage.getItem("youtubeTodoList"));
+        } 
+        
+        // step 4 Add to add function
+         let localTodoLists=getTodoListFromLocal() || [];
+        //  adding add to list dynmically
+        const addTodoDynmicElement=(currEle)=>{
+             let divElement=document.createElement('div');
+            // class add kr dii
+            divElement.classList.add("main_todo_div");
+            // add button and elemnetas in the form of list in maindiv
+            divElement.innerHTML=`<li>${currEle}</li>  <button class=" deletion">Delete</button>`;
+            todoListsElem.append(divElement);
+        }
+        const AddToDO=(e)=>{
+            // ye browser ke defalt beahvor ko hta dena hai form submit hone se ruk jata hai 
+            e.preventDefault();
+            // step 5 add in local storage (pahle hume store krna hai phir hume data dikhana hai) 
+
+            const TodoListsValue=inputVal.value.trim();
+
+            inputVal.value=""; 
+
+            if(TodoListsValue != "" && !localTodoLists.includes(TodoListsValue)){
+            // localTodoLists=getTodoListFromLocal() || [];
+
+            localTodoLists.push(TodoListsValue);
+            localTodoLists=[... new Set(localTodoLists)];
+            console.log(localTodoLists);
+
+            localStorage.setItem("youtubeTodoList",JSON.stringify(localTodoLists));
+            console.log("I am just checking is it working properly ir not");
+            let divElement=document.createElement('div');
+            // class add kr dii
+            divElement.classList.add("main_todo_div");
+            // add button and elemnetas in the form of list in maindiv
+            divElement.innerHTML=`<li>${inputVal.value}</li>  <button class=" deletion">Delete</button>`;
+            todoListsElem.append(divElement);
+            }
+        }
+
+        // step 6 ( show toos on page load)
+        const ShowLists=()=>{
+            console.log(localTodoLists);
+            localTodoLists.forEach(currEle => {
+                addTodoDynmicElement(currEle);
+            });
+        }
+        ShowLists();
+        // remove the data
+        const removeTodoElement=(e)=>{
+            const todoRemove=e.target;
+            let todoListContent=todoRemove.previousElementSibling.innerText;
+            console.log(todoListContent);
+            localTodoLists= localTodoLists.filter((currTodo)=>{
+                // console.log(currTodo);
+                
+               return currTodo !=todoListContent.toLowerCase();
+            });
+            console.log(localTodoLists);
+            
+        }
+        // step 7 (hum parent prr click event lagayenge and phit usko add krege )
+        todoListsElem.addEventListener(("click"),(e)=>{
+            e.preventDefault();
+            removeTodoElement(e);
+        });
+
+        
+        // step 3 add a event listner
+        btn.addEventListener(("click"),(e)=>{
+            AddToDO(e)
+        });
+
+        
+    </script>
+</body>
+</html>
