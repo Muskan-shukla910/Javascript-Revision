@@ -91,3 +91,6 @@ let student2={
 };
 let jsponData=JSON.stringify(student2);
 console.log(jsponData);
+let parseDate=JSON.parse(jsponData);
+console.log(parseDate);
+
