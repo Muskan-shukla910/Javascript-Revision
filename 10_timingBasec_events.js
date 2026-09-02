@@ -35,3 +35,26 @@ clearTimeout(mywork);
 
 // clearInterval
 // syntax= clearInterval(intervalId);
+
+// function intervalFunction(){
+//     console.log("This function was interval by 2000 miliseconds (2sec)");
+// }
+// // delayedFunction();
+
+// const intervalId=setInterval(intervalFunction,1000);
+// clearInterval(intervalId);
+
+// ==============================================================
+// challange Time
+// =====================================================================
+const repeatedFunction=()=>{
+    console.log("This function repates every 1000 milliseconds (1secons)");
+    
+}
+
+// ab ye 5 baar print karega
+repeatedFunction();
+const intervalId=setInterval(repeatedFunction, 1000);
+// console.log(intervalId);
+
+setTimeout(()=>{clearInterval(intervalId)},5000);
