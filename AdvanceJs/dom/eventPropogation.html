@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            height: 400px;
+            width: 400px;
+            background-color: yellow;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+        #middle{
+            height: 260px;
+            width: 260px;
+            background-color: aqua;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        #inner{
+            height: 200px;
+            width: 200px;
+            background-color: wheat;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        I'm Outerr
+        <div id="middle">
+            I'm middle
+            <div id="inner">
+                I'm inner
+            </div>
+        </div>
+    </div>
+    <script>
+        let parent=document.getElementById("parent");
+        let middle=document.getElementById("middle");
+        let inner=document.getElementById("inner");
+
+        calloute=(event)=>{
+            console.table([
+                {
+                    Description:"I am the outer one",
+                    Target:event.target,
+                    currentTarget:event.currentTarget,
+                },
+            ]);
+        };
+        callmiddle=(event)=>{
+            console.table([
+                {
+                    Description:"I'm middle one",
+                    Target:event.target,
+                    currentTarget:event.currentTarget,
+                },
+            ]);
+        };
+        callInner=(event)=>{
+            console.table([
+                {
+                    Description:"I'm inner one",
+                    Target:event.target,
+                    currentTarget:event.currentTarget,
+                },
+            ]);
+        };
+        // parent.addEventListener("click",calloute);
+        // middle.addEventListener("click",callmiddle);
+        // inner.addEventListener("click",callInner);
+
+        // Event capturing
+        // If you want to achive event capturing u can use third parameter of the addEventListner Method, which spefies whether the event should be captured during the capturing phase .
+        // parent.addEventListener("click",calloute,true);
+        // middle.addEventListener("click",callmiddle,true);
+        // inner.addEventListener("click",callInner,true);
+    </script>
+</body>
+</html>

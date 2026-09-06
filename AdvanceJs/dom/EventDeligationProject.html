@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Deligation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        #mainBody {
+            width: 90%;
+            margin: auto;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            gap: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: white;
+        }
+
+        .element {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* grid-template-columns: repeat(15, 1fr); */
+            border: 1px solid #66303e;
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .element:nth-child(46) {
+            grid-column: 6;
+        }
+
+        .element:nth-child(47) {
+            grid-column: 7;
+        }
+
+        .element:nth-child(48) {
+            grid-column: 8;
+        }
+
+        .element:nth-child(49) {
+            grid-column: 9;
+        }
+
+        .element:nth-child(50) {
+            grid-column: 10;
+        }
+
+        .element:hover {
+            background-color: #eb1850;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Deligation- Preodic table</h1>
+    <section id="mainBody"></section>
+
+    <script>
+        let mainBody = document.getElementById("mainBody");
+        //  function to handle click event
+        const handleEventClick = (event) => {
+            let target = event.target;
+            if (target.classList.contains("element")) {
+                const atomicNumber = target.getAttribute("data-atomic-number");
+                const elementName = target.getAttribute("data-element-number");
+                alert(`Atomic Number: ${atomicNumber} \n Element name:${elementName}`);
+            }
+        }
+        // function to create a preodic table element
+        function createPeriodictable(symbol, atomicNumber, name) {
+            let element = document.createElement("div");
+            element.classList.add("element");
+            element.innerHTML = symbol;
+            console.log(symbol);
+            // data-atomic-number  agar aap data se kuch start krte ho toh js me aap uske saath khel sakte ho
+            element.setAttribute("data-atomic-number", atomicNumber);
+            element.setAttribute("data-element-number", name);
+            return element;
+        }
+        // function to intialize the priodic table
+        function intializePeriodicTable() {
+
+            for (let i = 1; i <= 50; i++) {
+                // aise krne se achha hai hum ek function bna lege
+                // let div=document.createElement("div");
+                let element = createPeriodictable(`Ele${i}`, i, `Element ${i}`);
+                // console.log(div);
+                // // div.classList="element";
+                // div.innerText=i;
+
+                mainBody.append(element);
+            }
+        }
+
+        // yha pr hum ek abb na function chalayenge beavcause hume sabka data dikhana hai
+        mainBody.addEventListener("click", handleEventClick);
+        intializePeriodicTable();
+    </script>
+</body>
+
+</html>

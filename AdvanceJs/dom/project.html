@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Deligation</title>
+    <style>
+        #myList{
+            list-style: none;
+            /* border: 1px solid black; */
+            margin:  40px auto;
+            width: 30%;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            
+        }
+        li{
+            border: 2px solid black;
+            margin: 10px;
+           
+        }
+        #listValuee{
+            text-align: center;
+            margin-bottom: -300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <br>
+    <ul id="myList">
+        <p>Which Programming Language you like the most?</p>
+        <li>🎉✨ Javascript 🎉</li>
+        <li>🎈 React 🎈</li>
+        <li>🎊 Next 🎊</li>
+        <li>🎁HTML/CSS 🎁</li>
+
+    </ul>
+    <p id="listValuee"></p>
+
+    <script>
+        let myList=document.getElementById("myList");
+        let listValuee=document.getElementById("listValuee");
+        const getListDetails=(event)=>{
+            
+            let getvalue=event.target.innerText;
+            listValuee.textContent=`my fav language is ${getvalue}`
+        }
+        myList.addEventListener("click",getListDetails);
+    </script>
+</body>
+</html>
