@@ -1,0 +1,57 @@
+<!-- ordered and unordered -->
+
+<!-- Interview Quetions -->
+ <!-- what is purpose of the thead, tbody, tfoot
+  Simple meaning:
+<thead> → table ka header
+<tbody> → table ka main data
+<tfoot> → table ka footer, usually total/summary
+
+🧠 Yaad rakho: Head → Body → Foot. -->
+
+<!-- Question no 2 -->
+ <!-- how can you create table headers using the <th> element ? How is it diffrent from using <td> for data cells -->
+    Difference between <th> and <td>
+
+<!-- <th> → represents a header/heading cell. -->
+<!-- <td> → represents a normal data cell. -->
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Course</th>
+  </tr>
+
+  <tr>
+    <td>Muskan</td>
+    <td>21</td>
+    <td>BCA</td>
+  </tr>
+</table>
+
+<!-- Quetion no -3 -->
+<!-- what us the significance of the colspan and rowspan attributes in table cells? Provide an example 
+colspan → column-wise merge
+rowspan → row-wise merge
+-->
+
+<table border="2px">
+    <tr >
+        <th colspan="2">Student Details</th>
+        
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th rowspan="2">Muskan</th>
+    <td>BCA</td>
+  </tr>
+  <tr>
+    <td>21</td>
+  </tr>
+</table>

@@ -27,3 +27,17 @@ How can you create a clickable link in html that allows users to intiatate a pho
 
 <a href="mailto:user@technical.com">Send email to Thapa</a>
 
+--------------------------------------------------------------------
+
+<!-- what is diffrence between reltaive and absolute img -->
+ <!-- Ek line mein:
+
+Relative = "yahan se wahan jao"
+Absolute = "yeh exact address ha
+
+Relative path: Current file ki location ke according image ka path.
+Absolute path: Image ki complete/exact location (URL) jo current file location par depend nahi karti.
+
+Q2. Why is providing description alt text for images important ? It improves
+
+accessvibilty for users with visual impairmentsand helps search engines understand image content.
