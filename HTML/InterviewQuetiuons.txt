@@ -1,0 +1,29 @@
+<!-- Interview Quetions -->
+    How can you create a link within thje same webpage that takes the user to a specific sectin or element on the page.
+
+mtlb ye hai same hi page pr redirect hona like hum kisi ek element ko id de de aur <a></a> tag me usak href me link de de :
+ <a href="#our_service">see my service</a>
+
+Quetions No 2
+    <!-- Interview Quetion 2 -->
+     <!-- What's the diffrence between relativeand absolute URLs in the href attribute? -->
+    
+     <!-- Relative URLs are URLs that are relative t the current pages URLs Absolute URLs are complete URLs , including the protocol(http, https) -->
+<!-- Quetions no 3 -->
+    <!-- How does the download attribute work in the anchor tag -->
+     <!--The downloaded atrribute suggests that the linked resource shuld be downloaded instead of navigated to, prompting the user to download the file   -->
+
+<a href="Graph-1 Questions.pdf" download>Download Graph Questions</a>
+ <!-- download :suggests that the target will be downloaded when clicked -->
+
+
+<!-- Quetions no 4 -->
+How can you create a clickable link in html that allows users to intiatate a phone call when clicked.
+
+
+
+<!-- Quetions no 5-->
+ How do you create an html link that opens the user's default email client with a specific email address.
+
+<a href="mailto:user@technical.com">Send email to Thapa</a>
+
