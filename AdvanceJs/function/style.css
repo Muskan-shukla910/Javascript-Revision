@@ -1,0 +1,62 @@
+/* Style for project */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    background-color: #1e1e1e;
+    color: #171717;
+}
+.container{
+    background-color: #fff;
+    color: #171717;
+    padding: 2rem;
+    width: 40%;
+    margin: 4rem auto;
+    border-radius: 10px;
+}
+
+.wether-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.city-name{
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+}
+
+
+input{
+    border: none;
+    background-color: #1e1e1e;
+    color: #fff;
+    outline: none;
+    padding: 0.5rem 2.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+}
+
+input::placeholder{
+    color: #f7f7f7;
+
+}
+
+.wether-search{
+    position: relative;
+}
+
+.wether-search i{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 15px;
+    color: #fff;
+}
